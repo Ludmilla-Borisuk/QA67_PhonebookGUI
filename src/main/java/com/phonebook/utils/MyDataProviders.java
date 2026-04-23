@@ -21,6 +21,7 @@ public class MyDataProviders {
 
         String line = reader.readLine();
 
+
         while (line != null) {
             String[] split = line.split(",");
             list.add(new Object[]{new Contact()

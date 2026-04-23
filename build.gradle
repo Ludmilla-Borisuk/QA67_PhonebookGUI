@@ -36,6 +36,8 @@ task qa(type:Test){
 def registerTask(String taskName, String suitePath){
     tasks.register(taskName, Test){
         useTestNG(){
+            testClassesDirs = sourceSets.test.output.classesDirs
+            classpath = sourceSets.test.runtimeClasspath
             suites suitePath
         }
         if (project.hasProperty("browser")){
